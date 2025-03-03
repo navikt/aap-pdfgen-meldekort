@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8" />
+    <style>
+        * {
+            font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro,
+            ArialSystem, sans-serif;
+        }
+        h1 {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 36px;
+        }
+        h3 {
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 25px;
+        }
+        .main {
+            margin: 10px 30px;
+            color: black;
+        }
+        .header,
+        .info-data {
+            word-wrap: break-word;
+        }
+        .header,
+        .subheader {
+            text-align: center;
+        }
+        .subheader p {
+            font-style: italic;
+            font-size: 16px;
+            line-height: 22px;
+            color: #3E3832;
+            margin: 0;
+        }
+        .single-row,
+        .double-row {
+            margin-bottom: 20px;
+        }
+        .double-row {
+            white-space: nowrap;
+        }
+        .double-row>div {
+            vertical-align: top;
+            display: inline-block;
+            width: 45%;
+            white-space: normal;
+        }
+        .colored-line {
+            color: #78706A;
+            background-color: #78706A;
+            height: 1px;
+            margin-bottom: 30px;
+        }
+        .infoTable small {
+            font-size: 12px;
+        }
+        div.info-desc {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 22px;
+        }
+        div.info-data {
+            padding-top: 8px;
+            font-size: 16px;
+        }
+        div.info-data p {
+            font-size: 16px;
+            line-height: 22px;
+            color: #3E3832;
+        }
+        @page {
+            @bottom-right {
+                font-family: "Source Sans Pro", SourceSansPro, Source_Sans_Pro,
+                ArialSystem, sans-serif;
+                font-size: 15px;
+                content: "side "counter(page) " av "counter(pages);
+            }
+        }
+        .info p {
+            padding: 0;
+            margin: 0;
+            clear: both;
+        }
+        .info {
+            margin-bottom: 2em;
+        }
+        .p_wrap {
+            word-wrap: break-word;
+            white-space: pre-line;
+        }
+    </style>
+    <title>Søknad om AAP</title>
+</head>
+
+<body>
+<div class="main">
+    <div class="header">
+        <h1>Meldekort for AAP</h1>
+    </div>
+    <pre>
+        {{.}}
+    </pre>
+</div>
+</body>
+
+</html>

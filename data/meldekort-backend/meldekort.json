@@ -1,0 +1,20 @@
+{
+  "ident": "11223344556",
+  "sendtInnDato": "2020-01-01",
+  "sendtInnUtc": "2020-01-01T",
+  "meldekort": {
+    "harDuArbeidet": true,
+    "timerArbeidPerPeriode": [
+      {
+        "fraOgMedDato": "2020-01-01",
+        "tilOgMedDato": "2020-01-15",
+        "timerArbeid": 4
+      },
+      {
+        "fraOgMedDato": "2020-01-16",
+        "tilOgMedDato": "2020-01-20",
+        "timerArbeid": 7.0
+      }
+    ]
+  }
+}

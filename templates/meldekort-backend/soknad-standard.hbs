@@ -101,54 +101,11 @@
 <body>
 <div class="main">
     <div class="header">
-        <h1>Søknad om AAP</h1>
+        <h1>Meldekort for AAP</h1>
     </div>
-    <div class="subheader">
-        <p>Sendt inn digitalt via nav.no</p>
-        <p>{{dato}}</p>
-    </div>
-    <div class="personInfo info">
-        <h3>Startdato</h3>
-        <div class="single-row">
-            <div class="info-desc">Fra når</div>
-            <div class="info-data">
-                <p>{{søknad.startdato.fom}}</p>
-            </div>
-            <div class="info-desc">Begrunnelse</div>
-               <div class="info-data">
-                   <p>{{søknad.startdato.beskrivelse}}</p>
-               </div>
-            <div class="info-desc">Hvorfor</div>
-            <div class="info-data">
-                <p>{{søknad.startdato.hvorfor}}</p>
-            </div>
-        </div>
-    </div>
-    <div class="personInfo info">
-        <h3>Personlige opplysninger</h3>
-        <div class="double-row">
-            <div>
-                <div class="info-desc">For- og mellomnavn</div>
-                <div class="info-data">
-                    <p>{{søker.navn.fornavn}} {{søker.navn.mellomnavn}}</p>
-                </div>
-            </div>
-            <div>
-                <div class="info-desc">Etternavn</div>
-                <div class="info-data">
-                    <p>{{søker.navn.etternavn}}</p>
-                </div>
-            </div>
-        </div>
-        <div class="single-row">
-            <div class="info-desc">Fødselsnummer</div>
-            <div class="info-data">
-                <p>{{søker.fødselsnummer}}</p>
-            </div>
-        </div>
-        <hr class="colored-line"/>
-        <h3>Søknadsopplysninger</h3>
-    </div>
+    <pre>
+        {{.}}
+    </pre>
 </div>
 </body>
 
