@@ -11,7 +11,7 @@ on:
           - dev-gcp
           - prod-gcp
   push:
-    branches: [ master ]
+    branches: [ main ]
     paths-ignore:
       - '.github/**'
 
