@@ -6,12 +6,12 @@
     <meta name="description" content="{{> docdescription}}"/>
     <meta name="subject" content="{{> docsubject}}"/>
     <meta name="author" content="NAV IT"/>
-    {{#block 'aap-pdfgen/partials/style' }}
+    {{#block 'meldekort-backend/partials/style' }}
     {{/block}}
 </head>
 <body>
 <div class="navlogo-wrapper">
-    <img class="navlogo" alt="nav logo" src="{{ image "Hvit-resized.png" }}" />
+    <img class="navlogo" alt="nav logo" src="{{ image "Hvit-resized.png" }}"/>
 </div>
 <div class="title-wrapper">
     <h1>{{> title}}</h1>
@@ -22,19 +22,14 @@
             <div class="persontekst__sidetopp">
                 <img class="personikon" alt="person ikon" src="{{ image "Personikon.png" }}"/>
                 <div class="persontekst__personalia">
-                    <p class="navn">
-                        {{ søker.navn.fornavn }} {{ søker.navn.mellomnavn}} {{ søker.navn.etternavn }}
-                    </p>
                     <p class="id">
-                        {{ insert_at søker.fnr 6 }}
+                        {{ insert_at ident 6 }}
                     </p>
                 </div>
                 <div class="sendt">
-                    {{# if kvittering.mottattdato}}
-                        <p>
-                            Søknad mottatt<br/>{{iso_to_nor_datetime kvittering.mottattdato }}
-                        </p>
-                    {{/if}}
+                    <p>
+                        Meldekort mottatt<br/>{{ sendtInnDato }} {{ sendtInnUtc }}
+                    </p>
                 </div>
             </div>
         </div>
@@ -46,7 +41,7 @@
                 <p>{{tema.beskrivelse}}</p>
                 {{#each underblokker as |blokk|~}}
                     <div class="blokk">
-                        {{> aap-pdfgen/partials/blokkpartial blokk}}
+                        {{> meldekort-backend/partials/blokkpartial blokk}}
                     </div>
                 {{/each}}
             </div>
