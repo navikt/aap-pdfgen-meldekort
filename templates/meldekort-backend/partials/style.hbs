@@ -52,9 +52,11 @@
         top: 8mm;
         left: 7mm;
     }
+
     .navlogo {
         width: 48px;
     }
+
     .title-wrapper {
         padding-top: 3mm;
         padding-left: 30mm;
@@ -65,10 +67,6 @@
         display: inline-block;
     }
 
-    p.korrigert {
-        color: #ba3a26;
-        font-weight: bold;
-    }
 
     p.header__tittel {
         margin-top: 10px;
@@ -131,15 +129,6 @@
         margin-left: 3px;
     }
 
-    .vedleggikon {
-        float:left;
-        width: 15px;
-        margin-top: 0px;
-        padding-top: 5px;
-        margin-right: 8px;
-        margin-left: 10px;
-    }
-
     .persontekst {
         display: inline-block;
         width: 667px;
@@ -161,74 +150,10 @@
         margin-bottom: 32px;
     }
 
-    .sporsmalcontainer {
-        position: relative;
-        top: 50px;
-    }
-
-    .svarcontainer {
-        position: relative;
-        left: 2px;
-    }
-
-    .svar {
-        margin-top: 4px;
-        width: 90%;
-        font-size: 14px;
-        font-family: "Source Sans Pro";
-    }
-
-    .svar--perioder {
-        font-size: 18px;
-        font-weight: bold;
-        margin-left: 3px;
-
-    }
-
-    .svar--checkbox {
-        display: inline-block;
-    }
-
-    .checkbox {
-        vertical-align: top;
-        width: 13px;
-        margin: -3px 5px 0px 1px;
-    }
-
-    .hovedsporsmal {
-        page-break-inside: avoid;
-        margin-bottom: 1em;
-    }
-
-    .tabellcontainer {
-        page-break-inside: avoid !important;
-        display: block;
-        float: left;
-        width: 100%;
-        margin: 10px 0 10px 0;
-    }
-
-    .gruppecontainer {
-        margin: 10px 0 10px 0;
-    }
-
-    .sporsmal .sporsmal {
-        margin-left: 10px;
-    }
-
-    .sporsmalstekst {
-        font-weight: bold;
-    }
-
-    .venstre {
-        margin-right: 10px;
-        float: left;
-    }
-
     ul {
         font-family: "Source Sans Pro";
         font-size: 14px;
-        list-style-image: url("{{ image "vedlegg.png" }}");
+        list-style-image: url({{ image "vedlegg.png" }});
     }
 
     ul li {
@@ -240,97 +165,11 @@
         margin-bottom: 10px;
     }
 
-    table {
-        table-layout: fixed;
+    .temacontainer {
         width: 100%;
-        border-collapse: collapse;
-        margin-bottom: 1em;
-        padding-bottom: 1.5em;
+        /*margin-top: 5mm;*/
+        margin-top: -10mm;
     }
-
-    td {
-        padding: 5px;
-        vertical-align: top;
-    }
-
-    .felt {
-        margin-bottom: 10px;
-        float: left;
-        display: block;
-    }
-
-    .underspm__elementer {
-        padding-left: 10px;
-    }
-
-    .oppsummeringsliste {
-        list-style-type: none;
-        padding-left: 0;
-        margin: 0;
-    }
-
-    .feltoppsummering {
-        margin-bottom: 1rem;
-    }
-
-    .typo-etikett-liten {
-        font-size: .875rem;
-        line-height: 1.25rem;
-        text-transform: uppercase;
-    }
-
-    .typo-element-feltoppsummering__verdi {
-        font-size: 1rem;
-        line-height: 1.375rem;
-        font-weight: 400;
-    }
-
-    .blokk-m {
-        margin-bottom: 10px;
-    }
-
-    .blokk-m:last-child {
-        margin-bottom: 0;
-    }
-
-    .textWithLabel {
-        padding: 2px 0;
-    }
-
-    .typo-etikett-liten {
-        margin: 0;
-        font-family: 'Source Sans Pro';
-        font-size: 14px;
-        text-transform: uppercase;
-    }
-
-    .textWithLabel__label {
-        color: #79706a;
-    }
-
-    .typo-element {
-        margin: 0;
-        font-size: 10px;
-    }
-
-    .textWithLabel__text {
-        margin-top: 8px !important;
-    }
-
-    .countryListElement__nameAndDate {
-        width: 100%;
-    }
-
-    .fritekst {
-        float: left;
-        display: block;
-        width: 100%;
-    }
-
-    .avoid-page-break {
-        page-break-inside: avoid !important;
-    }
-
 
     .tema {
         margin-top: 15px;
@@ -338,58 +177,11 @@
         overflow: hidden;
     }
 
-    .tema h2:first-child{
-        margin-top:0;
+    .tema h2:first-child {
+        margin-top: 0;
     }
 
     .tema h2 {
         margin-bottom: 10px;
     }
-
-    .element {
-        width: 100%;
-        display: block;
-    }
-
-    .element-overskrift {
-        font-weight: 500;
-        font-style: normal;
-        font-size: 14px;
-    }
-
-    .blokk {
-        width: 100%;
-        display: block;
-        float: left;
-    }
-
-    .clear {
-        clear: left;
-    }
-
-    .temacontainer {
-        width: 100%;
-        /*margin-top: 5mm;*/
-        margin-top: -10mm;
-    }
-
-    .feltgruppecontainer {
-        border-left: 5px solid grey;
-        padding-left: 20px;
-        margin: 20px 0 20px 0;
-        display: block;
-        float: left;
-        width: 100%;
-    }
-    .feltgruppeelement {
-        display: block;
-        float: left;
-        width: 100%;
-    }
-
-    .indent {
-        padding-left: 20px;
-    }
-
-
 </style>
