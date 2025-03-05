@@ -22,6 +22,9 @@
             <div class="persontekst__sidetopp">
                 <img class="personikon" alt="person ikon" src="{{ image "Personikon.png" }}"/>
                 <div class="persontekst__personalia">
+                    <p class="navn">
+                        {{ navn }}
+                    </p>
                     <p class="id">
                         {{ insert_at ident 6 }}
                     </p>
@@ -49,7 +52,7 @@
 
         {{#each meldekort.timerArbeidPerPeriode as |periode|~}}
             <div class="tema">
-                <h2 class="tema">{{ periode.fraOgMedDato }} - {{ periode.tilOgMedDato }}</h2>
+                <h2 class="tema">Periode {{ periode.fraOgMedDato }} - {{ periode.tilOgMedDato }}</h2>
                 <p>Antall timer arbeidet: {{periode.timerArbeid}}</p>
             </div>
         {{/each}}
