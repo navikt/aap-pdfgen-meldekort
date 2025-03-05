@@ -35,21 +35,28 @@
         </div>
     </div>
     <div class="temacontainer">
-        {{#each kvittering.temaer as |tema|~}}
+        {{# if meldekort.harDuArbeidet}}
+            <p>
+                Har du arbeidet?: Ja
+            </p>
+        {{/if}}
+
+        {{# unless meldekort.harDuArbeidet}}
+            <p>
+                Har du arbeidet?: Nei
+            </p>
+        {{/unless}}
+
+        {{#each meldekort.timerArbeidPerPeriode as |periode|~}}
             <div class="tema">
-                <h2 class="tema">{{ tema.overskrift }}</h2>
-                <p>{{tema.beskrivelse}}</p>
-                {{#each underblokker as |blokk|~}}
-                    <div class="blokk">
-                        {{> meldekort-backend/partials/blokkpartial blokk}}
-                    </div>
-                {{/each}}
+                <h2 class="tema">{{ periode.fraOgMedDato }} - {{ periode.tilOgMedDato }}</h2>
+                <p>Antall timer arbeidet: {{periode.timerArbeid}}</p>
             </div>
         {{/each}}
     </div>
 </div>
 <div id="footer">
-    <span class="soknadsid">{{ soknadsId }}</span>
+    <span class="soknadsid">Hva skal vi ha her?</span>
     <span class="sidetall">side <span id="pagenumber"></span> av <span id="pagecount"></span></span>
 </div>
 </body>

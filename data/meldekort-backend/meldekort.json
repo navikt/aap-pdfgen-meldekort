@@ -3,7 +3,7 @@
   "sendtInnDato": "2020-01-01",
   "sendtInnUtc": "2020-01-01T",
   "meldekort": {
-    "harDuArbeidet": true,
+    "harDuArbeidet": false,
     "timerArbeidPerPeriode": [
       {
         "fraOgMedDato": "2020-01-01",
