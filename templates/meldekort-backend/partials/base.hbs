@@ -10,54 +10,98 @@
     {{/block}}
 </head>
 <body>
-<div class="navlogo-wrapper">
-    <img class="navlogo" alt="nav logo" src="{{ image "Hvit-resized.png" }}"/>
+
+<img class="navlogo" alt="nav logo" src="{{ image "Hvit-resized.png" }}"/>
+
+<div class="personinfo">
+    <p class="litenskrift">Navn: {{ navn }}</p>
+    <p class="litenskrift">Fødselsnummer: {{ insert_at ident 6 }}</p>
+    <p class="litenskrift">Meldekort-ID: 123445</p>
+    <p class="litenskrift">Mottatt: {{ sendtInnDato }} {{ sendtInnUtc }}</p>
 </div>
-<div class="title-wrapper">
-    <h1>{{> title}}</h1>
+
+<div>
+    <h1 class="overskrift">Meldekort for uke 1,2 og 3</h1>
+    <p class="mellomstorskrift">{{ meldeperiode.fraOgMedDato}} - {{ meldeperiode.tilOgMedDato }}</p>
 </div>
-<div class="container">
-    <div class="personinfo">
-        <div class="persontekst">
-            <div class="persontekst__sidetopp">
-                <img class="personikon" alt="person ikon" src="{{ image "Personikon.png" }}"/>
-                <div class="persontekst__personalia">
-                    <p class="navn">
-                        {{ navn }}
-                    </p>
-                    <p class="id">
-                        {{ insert_at ident 6 }}
-                    </p>
+
+<div class="margin16">
+    <p class="mellomstorskrift">Du kan sende dette meldekortet fra {{ innsendingsvindu.fraOgMedDato }}, og
+        senest {{ innsendingsvindu.tilOgMedDato }} for å unngå trekk i utbetalingen. Du vil få
+        utbetalt AAP cirka 2 til 3 virkedager etter at du har levert meldekortet.</p>
+</div>
+
+<div class="margin16">
+    <p class="bold">Takk for at du er ærlig</p>
+    <p class="mellomstorskrift">Det er viktig at du gir oss riktige opplysninger.</p>
+    <a class="mellomstorskrift" href="https://www.nav.no/endringer" target="_blank">Les mer om viktigheten av å gi
+        riktige
+        opplysninger</a>
+</div>
+
+<div class="margin16">
+    <h2 class="overskrift">Fyll ut meldekort</h2>
+    <p class="mellomstorskrift">Skriv inn timene du har arbeidet for perioden. Timer skrives med desimal til nærmeste
+        halvtime. For eksempel blir
+        7 timer og 30 min = 7,5 timer.</p>
+    <div class="margin16">
+        <p class="mellomstorskrift">Les mer om hva som skal fylles ut</p>
+        <p class="mellomstorskrift lesmer">Alle aktiviteter som er betalt, eller som normalt ville ha vært betalt, regnes som
+            arbeid og skal føres på
+            meldekortet. For eksempel regnes gratisarbeid for andre som vanligvis er betalt, frilansarbeid og lønnede
+            verv som arbeid. <a class="mellomstorskrift" href="https://www.nav.no/send-meldekort-aap#arbeid"
+                                target="_blank">Les mer om hva
+                som regnes som arbeid.</a></p>
+
+    </div>
+</div>
+
+<div class="margin16">
+    <p class="bold">Har du arbeidet i perioden?</p>
+    {{# if meldekort.harDuArbeidet}}
+        <p>
+            (x) Ja
+        </p>
+        <p>
+            Nei
+        </p>
+    {{/if}}
+
+    {{# unless meldekort.harDuArbeidet}}
+        <p>
+            Ja
+        </p>
+        <p>
+            (x) Nei
+        </p>
+    {{/unless}}
+</div>
+
+<div class="margin16">
+    <p class="bold">Antall timer arbeidet</p>
+    {{#each meldekort.timerArbeidPerUkeIPerioden as |uke|~}}
+        <div class="uke">
+            <p>Uke XX {{ uke.fraOgMedDato }} - {{ uke.tilOgMedDato }}</p>
+            {{#each uke.dager as |dag|~}}
+                <div class="dag">
+                <p>{{ dag.dag }}: {{dag.timerArbeid}} timer</p>
                 </div>
-                <div class="sendt">
-                    <p>
-                        Meldekort mottatt<br/>{{ sendtInnDato }} {{ sendtInnUtc }}
-                    </p>
-                </div>
-            </div>
+            {{/each}}
         </div>
-    </div>
-    <div class="temacontainer">
-        {{# if meldekort.harDuArbeidet}}
-            <p>
-                Har du arbeidet?: Ja
-            </p>
-        {{/if}}
-
-        {{# unless meldekort.harDuArbeidet}}
-            <p>
-                Har du arbeidet?: Nei
-            </p>
-        {{/unless}}
-
-        {{#each meldekort.timerArbeidPerPeriode as |periode|~}}
-            <div class="tema">
-                <h2 class="tema">Periode {{ periode.fraOgMedDato }} - {{ periode.tilOgMedDato }}</h2>
-                <p>Antall timer arbeidet: {{periode.timerArbeid}}</p>
-            </div>
-        {{/each}}
-    </div>
+    {{/each}}
 </div>
+
+<div class="margin16">
+    <p class="bold">Sammenlagt for perioden</p>
+    <p>{{sammenlagtArbeidIPerioden}} timer arbeidet</p>
+</div>
+
+<div class="margin16">
+    <p class="bold">Samtykke</p>
+    <p>Jeg bekrefter at jeg har gitt riktige opplysninger</p>
+</div>
+
+
 <div id="footer">
     <span class="sidetall">side <span id="pagenumber"></span> av <span id="pagecount"></span></span>
 </div>

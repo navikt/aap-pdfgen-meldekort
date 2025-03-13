@@ -1,20 +1,48 @@
 {
   "ident": "11223344556",
   "navn": "Iren Panikk",
-  "sendtInnDato": "2020-01-01",
-  "sendtInnUtc": "2020-01-01T",
+  "sendtInnDato": "2025-03-28",
+  "sendtInnUtc": "2025-01-01T",
+  "sammenlagtArbeidIPerioden": 12,
+  "harGittRiktigeOpplysninger": true,
+  "meldeperiode": {
+    "fraOgMedDato": "2025-03-13",
+    "tilOgMedDato": "2025-03-27"
+  },
+  "innsendingsvindu": {
+    "fraOgMedDato": "2020-03-28",
+    "tilOgMedDato": "2020-04-05"
+  },
   "meldekort": {
     "harDuArbeidet": false,
-    "timerArbeidPerPeriode": [
+    "timerArbeidPerUkeIPerioden": [
       {
-        "fraOgMedDato": "2020-01-01",
-        "tilOgMedDato": "2020-01-15",
-        "timerArbeid": 4
+        "fraOgMedDato": "2025-03-13",
+        "tilOgMedDato": "2025-03-20",
+        "dager": [
+          {
+            "dag": "2025-03-13",
+            "timerArbeid": 2
+          },
+          {
+            "dag": "2025-03-15",
+            "timerArbeid": 4
+          }
+        ]
       },
       {
-        "fraOgMedDato": "2020-01-16",
-        "tilOgMedDato": "2020-01-20",
-        "timerArbeid": 7.0
+        "fraOgMedDato": "2025-03-20",
+        "tilOgMedDato": "2025-03-27",
+        "dager": [
+          {
+            "dag": "2025-03-20",
+            "timerArbeid": 2
+          },
+          {
+            "dag": "2025-03-24",
+            "timerArbeid": 4
+          }
+        ]
       }
     ]
   }
