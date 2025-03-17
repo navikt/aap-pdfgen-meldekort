@@ -2,12 +2,13 @@
   "ident": "11223344556",
   "navn": "Iren Panikk",
   "sendtInnDato": "2025-03-28",
-  "sendtInnUtc": "2025-01-01T",
+  "meldekortid": "123456789",
   "sammenlagtArbeidIPerioden": 12,
   "harGittRiktigeOpplysninger": true,
   "meldeperiode": {
     "fraOgMedDato": "2025-03-13",
-    "tilOgMedDato": "2025-03-27"
+    "tilOgMedDato": "2025-03-27",
+    "uker": "Uke 1, 2 og 3"
   },
   "innsendingsvindu": {
     "fraOgMedDato": "2020-03-28",
@@ -17,6 +18,7 @@
     "harDuArbeidet": false,
     "timerArbeidPerUkeIPerioden": [
       {
+        "ukenummer": "5",
         "fraOgMedDato": "2025-03-13",
         "tilOgMedDato": "2025-03-20",
         "dager": [
@@ -33,6 +35,7 @@
       {
         "fraOgMedDato": "2025-03-20",
         "tilOgMedDato": "2025-03-27",
+        "ukenummer": "6",
         "dager": [
           {
             "dag": "2025-03-20",

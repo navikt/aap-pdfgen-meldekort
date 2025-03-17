@@ -16,12 +16,12 @@
 <div class="personinfo">
     <p class="litenskrift">Navn: {{ navn }}</p>
     <p class="litenskrift">Fødselsnummer: {{ insert_at ident 6 }}</p>
-    <p class="litenskrift">Meldekort-ID: 123445</p>
-    <p class="litenskrift">Mottatt: {{ sendtInnDato }} {{ sendtInnUtc }}</p>
+    <p class="litenskrift">Meldekort-ID: {{ meldekortid }}</p>
+    <p class="litenskrift">Mottatt: {{ sendtInnDato }}</p>
 </div>
 
 <div>
-    <h1 class="overskrift">Meldekort for uke 1,2 og 3</h1>
+    <h1 class="overskrift">Meldekort for {{ meldeperiode.uker }}</h1>
     <p class="mellomstorskrift">{{ meldeperiode.fraOgMedDato}} - {{ meldeperiode.tilOgMedDato }}</p>
 </div>
 
@@ -46,7 +46,8 @@
         7 timer og 30 min = 7,5 timer.</p>
     <div class="margin16">
         <p class="mellomstorskrift">Les mer om hva som skal fylles ut</p>
-        <p class="mellomstorskrift lesmer">Alle aktiviteter som er betalt, eller som normalt ville ha vært betalt, regnes som
+        <p class="mellomstorskrift lesmer">Alle aktiviteter som er betalt, eller som normalt ville ha vært betalt,
+            regnes som
             arbeid og skal føres på
             meldekortet. For eksempel regnes gratisarbeid for andre som vanligvis er betalt, frilansarbeid og lønnede
             verv som arbeid. <a class="mellomstorskrift" href="https://www.nav.no/send-meldekort-aap#arbeid"
@@ -81,10 +82,10 @@
     <p class="bold">Antall timer arbeidet</p>
     {{#each meldekort.timerArbeidPerUkeIPerioden as |uke|~}}
         <div class="uke">
-            <p>Uke XX {{ uke.fraOgMedDato }} - {{ uke.tilOgMedDato }}</p>
+            <p>Uke {{ ukenummer }} {{ uke.fraOgMedDato }} - {{ uke.tilOgMedDato }}</p>
             {{#each uke.dager as |dag|~}}
                 <div class="dag">
-                <p>{{ dag.dag }}: {{dag.timerArbeid}} timer</p>
+                    <p>{{ dag.dag }}: {{dag.timerArbeid}} timer</p>
                 </div>
             {{/each}}
         </div>
