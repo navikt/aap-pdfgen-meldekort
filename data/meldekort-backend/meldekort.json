@@ -4,6 +4,7 @@
   "meldekortid": "123456789",
   "sammenlagtArbeidIPerioden": 12,
   "harGittRiktigeOpplysninger": true,
+  "harBrukerVedtakIKelvin": true,
   "meldeperiode": {
     "fraOgMedDato": "2025-03-13",
     "tilOgMedDato": "2025-03-27",

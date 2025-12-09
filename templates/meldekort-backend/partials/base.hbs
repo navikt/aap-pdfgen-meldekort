@@ -26,8 +26,11 @@
 
 <div class="margin16">
     <p class="mellomstorskrift">Du kan sende dette meldekortet fra {{ innsendingsvindu.fraOgMedDato }}, og
-        senest {{ innsendingsvindu.tilOgMedDato }} for å unngå trekk i utbetalingen. Du vil få
-        utbetalt AAP cirka 2 til 3 virkedager etter at du har levert meldekortet.</p>
+        senest {{ innsendingsvindu.tilOgMedDato }} for å unngå trekk i utbetalingen. 
+	{{# if harBrukerVedtakIKelvin}}
+	  Du vil få utbetalt AAP cirka 2 til 3 virkedager etter at du har levert meldekortet.
+	{{/if}}
+      </p>
 </div>
 
 <div class="margin16">
